@@ -2,6 +2,8 @@
 
 walk the ast
 
+[![build status](https://secure.travis-ci.org/substack/astw.png)](http://travis-ci.org/substack/astw)
+
 This module is a faster version of
 [falafel](https://github.com/substack/node-falafel)
 that only does ast walking and `.parent` tracking, not source transforms.
