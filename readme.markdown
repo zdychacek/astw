@@ -2,6 +2,8 @@
 
 walk the ast
 
+[![browser support](http://ci.testling.com/substack/astw.png)](http://ci.testling.com/substack/astw)
+
 [![build status](https://secure.travis-ci.org/substack/astw.png)](http://travis-ci.org/substack/astw)
 
 This module is a faster version of
