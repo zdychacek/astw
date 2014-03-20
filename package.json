@@ -1,6 +1,6 @@
 {
   "name": "astw",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "walk the ast with references to parent nodes",
   "main": "index.js",
   "dependencies": {
