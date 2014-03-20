@@ -1,7 +1,11 @@
 var parse = require('esprima-fb').parse;
 
 module.exports = function (src) {
-    var ast = typeof src === 'string' ? parse(src) : src;
+    var ast = src;
+    if (typeof src === 'string') {
+        try { ast = parse(src) }
+        catch (err) { ast = parse('(' + src + ')') }
+    }
     return function (cb) {
         walk(ast, undefined, cb);
     };
