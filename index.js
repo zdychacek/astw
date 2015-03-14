@@ -1,4 +1,4 @@
-var parse = require('esprima-fb').parse;
+var parse = require('esprima').parse;
 
 module.exports = function (src) {
     var ast = src;
