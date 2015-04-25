@@ -1,9 +1,14 @@
-var parse = require('esprima').parse;
+var parse = require('acorn').parse;
 
 module.exports = function (src) {
     var ast = src;
     if (typeof src === 'string') {
-        try { ast = parse(src) }
+        try {
+            ast = parse(src, {
+                ecmaVersion: 6,
+                allowReturnOutsideFunction: true
+            })
+        }
         catch (err) { ast = parse('(' + src + ')') }
     }
     return function (cb) {
