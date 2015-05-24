@@ -6,7 +6,8 @@ module.exports = function (src) {
         try {
             ast = parse(src, {
                 ecmaVersion: 6,
-                allowReturnOutsideFunction: true
+                allowReturnOutsideFunction: true,
+                allowHashBang: true
             })
         }
         catch (err) { ast = parse('(' + src + ')') }
