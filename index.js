@@ -1,14 +1,15 @@
 var parse = require('acorn').parse;
+var xtend = require('xtend');
 
-module.exports = function (src) {
+module.exports = function (src, opts) {
     var ast = src;
     if (typeof src === 'string') {
         try {
-            ast = parse(src, {
+            ast = parse(src, xtend({
                 ecmaVersion: 6,
                 allowReturnOutsideFunction: true,
                 allowHashBang: true
-            })
+            }, opts));
         }
         catch (err) { ast = parse('(' + src + ')') }
     }
