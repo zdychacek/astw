@@ -1,14 +1,12 @@
 {
-  "name": "astw",
+  "name": "@sklik/astw",
   "version": "2.2.0",
   "description": "walk the ast with references to parent nodes",
   "main": "index.js",
-  "dependencies": {
-    "acorn": "^4.0.3"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "tape": "~2.4.1",
-    "escodegen": "~0.0.17"
+    "babylon": "^6.17.4",
+    "tape": "~2.4.1"
   },
   "scripts": {
     "test": "tape test/*.js"

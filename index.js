@@ -1,4 +1,4 @@
-var parse = require('acorn').parse;
+var parse = require('babylon').parse;
 
 module.exports = function (src, opts) {
     if (!opts) opts = {}
@@ -6,8 +6,8 @@ module.exports = function (src, opts) {
     if (typeof src === 'string') {
         try {
             ast = parse(src, {
-                ecmaVersion: opts.ecmaVersion || 8,
-                allowReturnOutsideFunction: true
+                allowReturnOutsideFunction: true,
+                plugins: opts.plugins || []
             })
         }
         catch (err) { ast = parse('(' + src + ')') }
@@ -22,7 +22,7 @@ function walk (node, parent, cb) {
     for (var i = 0; i < keys.length; i++) {
         var key = keys[i];
         if (key === 'parent') continue;
-        
+
         var child = node[key];
         if (isArray(child)) {
             for (var j = 0; j < child.length; j++) {
