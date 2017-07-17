@@ -25,9 +25,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/substack/astw.git"
+    "url": "git://github.com/zdychacek/astw.git"
   },
-  "homepage": "https://github.com/substack/astw",
+  "homepage": "https://github.com/zdychacek/astw",
   "keywords": [
     "ast",
     "walk",

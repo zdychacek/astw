@@ -7,7 +7,7 @@ module.exports = function (src, opts) {
         try {
             ast = parse(src, {
                 allowReturnOutsideFunction: true,
-                plugins: opts.plugins || []
+                plugins: opts.parserPlugins || []
             })
         }
         catch (err) { ast = parse('(' + src + ')') }
