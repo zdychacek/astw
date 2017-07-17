@@ -1,6 +1,6 @@
 {
   "name": "@zdychacek/astw",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "walk the ast with references to parent nodes",
   "main": "index.js",
   "dependencies": {},
