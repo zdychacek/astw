@@ -1,32 +1,24 @@
 # astw
 
-walk the ast
+*This is a fork of [`astw`](https://www.npmjs.com/package/astw) which uses [Babylon](https://github.com/babel/babylon) parser instead of [`acorn`](https://www.npmjs.com/package/acorn).*
 
-[![browser support](http://ci.testling.com/substack/astw.png)](http://ci.testling.com/substack/astw)
-
-[![build status](https://secure.travis-ci.org/substack/astw.png)](http://travis-ci.org/substack/astw)
-
-This module is a faster version of
-[falafel](https://github.com/substack/node-falafel)
-that only does ast walking and `.parent` tracking, not source transforms.
+Walks the AST.
 
 # example
 
 ``` js
-var astw = require('astw');
-var deparse = require('escodegen').generate;
+var astw = require('../');
 var walk = astw('4 + beep(5 * 2)');
 
 walk(function (node) {
-    var src = deparse(node);
-    console.log(node.type + ' :: ' + JSON.stringify(src));
+    console.log(node);
 });
 ```
 
 # methods
 
 ``` js
-var astw = require('astw')
+var astw = require('@zdychacek/astw')
 ```
 
 ## var walk = astw(src, opts={})
@@ -35,12 +27,12 @@ Return a `walk()` function from the source string or ast object `src`.
 
 Optionally:
 
-* `opts.ecmaVersion` - default: 8
+* `opts.parserPlugins` - list of plugins for Babylon parser
 
 ## walk(cb)
 
 Walk the nodes in the ast with `cb(node)` where `node` is each element in the
-ast from [esprima](http://esprima.org/) but with an additional `.parent`
+ast from [babylon](https://github.com/babel/babylon) but with an additional `.parent`
 reference to the parent node.
 
 # install
@@ -48,7 +40,7 @@ reference to the parent node.
 With [npm](https://npmjs.org) do:
 
 ```
-npm install astw
+npm install @zdychacek/astw
 ```
 
 # license
