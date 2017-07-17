@@ -1,5 +1,5 @@
 {
-  "name": "@sklik/astw",
+  "name": "@zdychacek/astw",
   "version": "2.2.0",
   "description": "walk the ast with references to parent nodes",
   "main": "index.js",
@@ -32,7 +32,7 @@
     "ast",
     "walk",
     "source",
-    "acorn"
+    "babylon"
   ],
   "author": {
     "name": "James Halliday",
